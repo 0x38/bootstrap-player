@@ -22,3 +22,9 @@ Additional Features When Using
 
   * Font Awesome CDN (//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css)
 
+Music Attribution
+
+  * Live Music Archive (https://archive.org/)
+  * Twiddle performing La Bamba, Live at Vermont Technical College on 2014-09-25 (September 25, 2014) (https://archive.org/details/Twiddle2014-09-25)
+  * Twiddle's Website (http://twiddlemusic.com)
+  * Follow Twiddle @twiddlemusic (https://twitter.com/Twiddlemusic)
