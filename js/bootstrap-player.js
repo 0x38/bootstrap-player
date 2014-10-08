@@ -4,45 +4,45 @@
 		var song = this;
 			song.controls=false;
 		var player_box = document.createElement('div');
-			$(player_box).addClass($(song).attr('class') + ' well container-fluid playa');
+			$(player_box).addClass($(song).attr('class') + ' container playa');
 		var data_sec = document.createElement('section');
 			$(data_sec).addClass('collapse');
 		var toggle_holder = document.createElement('div');
-			$(toggle_holder).addClass('btn-group row-fluid');
+			$(toggle_holder).addClass('btn-group row');
 		var data_toggle = document.createElement('a');
-			$(data_toggle).html('<i class="icon-reorder"></i>');
+			$(data_toggle).html('<i class="fa fa-reorder fa-2x"></i>');
 			$(data_toggle).addClass('btn btn-block');
 			$(data_toggle).attr('style', 'opacity:0.3');
 			$(data_toggle).click(function (){$(data_sec).collapse('toggle');});
 			$(data_toggle).attr('title', 'Details');
-			$(data_toggle).tooltip({'container': 'body', 'placement': 'top', 'html': true});
+			//$(data_toggle).tooltip({'container': 'body', 'placement': 'top', 'html': true});
 			$(toggle_holder).append(data_toggle);
 		var data_table = document.createElement('table');
 			$(data_table).addClass('table table-condensed');
 		var player = document.createElement('section');
-			$(player).addClass('btn-group row-fluid');
+			$(player).addClass('btn-group row');
 		var load_error = function(){
 			console.log('error');
 			$(player_box).find('.btn').addClass('disabled');
 			$(player_box).find('input[type="range"]').hide();
-			$(player_box).find('.icon-spin').text('Error');
-			$(player_box).find('.icon-spin').parent().attr('title', 'There was an error loading the audio.');
-			$(player_box).find('.icon-spin').parent().tooltip('fixTitle');
-			$(player_box).find('.icon-spin').removeClass('icon-spinner icon-spin');
+			$(player_box).find('.fa fa-refresh fa-spin fa-2x').text('Error');
+			$(player_box).find('.fa fa-refresh fa-spin fa-2x').parent().attr('title', 'There was an error loading the audio.');
+			//$(player_box).find('.fa fa-refresh fa-spin fa-2x').parent().tooltip('fixTitle');
+			$(player_box).find('.fa fa-refresh fa-spin fa-2x').removeClass('fa fa-refresh fa-spin fa-2x');
 		};
 		var addPlay = function() {
 			var play = document.createElement('button');
-				$(play).addClass('btn disabled span1');
+				$(play).addClass('btn btn-default disabled col-xs-12');
 			play.setPlayState = function(toggle){
 					$(play).removeClass('disabled');
 				if (toggle === 'play') {
-					$(play).html('<i class="icon-play"></i>');
+					$(play).html('<i class="fa fa-play fa-2x"></i>');
 					$(play).click(function () {
 						song.play();
 					});
 				}
 				if (toggle === 'pause') {
-					$(play).html('<i class="icon-pause"></i>');
+					$(play).html('<i class="fa fa-pause fa-2x"></i>');
 					$(play).click(function () {
 						song.pause();
 					});
@@ -77,9 +77,9 @@
 					'class': 'seek'
 				});
 			seek.progress = function () {
-				var bg = 'rgba(223, 240, 216, 1) 0%';
-				bg += ', rgba(223, 240, 216, 1) ' + ((song.currentTime/song.duration) * 100) + '%';
-				bg += ', rgba(223, 240, 216, 0) ' + ((song.currentTime/song.duration) * 100) + '%';
+				var bg = 'rgba(200, 200, 200, 1) 0%';
+				bg += ', rgba(200, 200, 200, 1) ' + ((song.currentTime/song.duration) * 100) + '%';
+				bg += ', rgba(200, 200, 200, 0) ' + ((song.currentTime/song.duration) * 100) + '%';
 				for (var i=0; i<song.buffered.length; i++){
 					if (song.buffered.end(i) > song.currentTime && isNaN(song.buffered.end(i)) === false && isNaN(song.buffered.start(i)) === false){
 						var bufferedstart;
@@ -96,13 +96,13 @@
 						else {
 							bufferedstart = ((song.currentTime/song.duration) * 100);
 						}
-						bg += ', rgba(217, 237, 247, 0) ' + bufferedstart + '%';
-						bg += ', rgba(217, 237, 247, 1) ' + bufferedstart + '%';
-						bg += ', rgba(217, 237, 247, 1) ' + bufferedend + '%';
-						bg += ', rgba(217, 237, 247, 0) ' + bufferedend + '%';
+						bg += ', rgba(200, 200, 200, 0) ' + bufferedstart + '%';
+						bg += ', rgba(200, 200, 200, 1) ' + bufferedstart + '%';
+						bg += ', rgba(200, 200, 200, 1) ' + bufferedend + '%';
+						bg += ', rgba(200, 200, 200, 0) ' + bufferedend + '%';
 					}						
 				}
-				$(seek).css('background', '-webkit-linear-gradient(left, ' + bg + ')');
+				//$(seek).css('background', '-webkit-linear-gradient(left, ' + bg + ')');
 				//These may be re-enabled when/if other browsers support the background like webkit
 				//$(seek).css('background','-o-linear-gradient(left,  ' + bg + ')');
 				//$(seek).css('background','-moz-linear-gradient(left,  ' + bg + ')');
@@ -132,7 +132,7 @@
 				else {song.play();}
 			};
 			var seek_wrapper = document.createElement('div');
-				$(seek_wrapper).addClass('btn disabled span4');
+				$(seek_wrapper).addClass('btn btn-default disabled col-xs-12');
 
 			$(seek_wrapper).append(seek);
 			$(seek).on('change', seek.slide);
@@ -150,13 +150,13 @@
 		};
 		var addTime = function() {
 			var time = document.createElement('a');
-				$(time).addClass('btn span3');
-				$(time).tooltip({'container': 'body', 'placement': 'right', 'html': true});
+				$(time).addClass('btn btn-default col-xs-12');
+				//$(time).tooltip({'container': 'body', 'placement': 'right', 'html': true});
 			time.twodigit = function (myNum) {
 				return ("0" + myNum).slice(-2);
 			};
 			time.timesplit = function (a) {
-				if (isNaN(a)){return '<i class="icon-spinner icon-spin"></i>';}
+				if (isNaN(a)){return '<i class="fa fa-refresh fa-spin fa-2x"></i>';}
 				var hours = Math.floor(a / 3600);
 				var minutes = Math.floor(a / 60) - (hours * 60);
 				var seconds = Math.floor(a) - (hours * 3600) - (minutes * 60);
@@ -168,21 +168,23 @@
 			};
 			time.showtime = function () {
 				$(time).html(time.timesplit(song.duration));
-				$(time).attr({'title': 'Click to Reset<hr style="padding:0; margin:0;" />Position: ' + (time.timesplit(song.currentTime))});
+				//$(time).attr({'title': 'Click to Reset<hr style="padding:0; margin:0;">Position: ' + (time.timesplit(song.currentTime))});
+				$(time).attr({'title': 'Click to Reset '});
 				if (!song.paused){
 					$(time).html(time.timesplit(song.currentTime));
-					$(time).attr({'title': 'Click to Reset<hr style="padding:0; margin:0;" />Length: ' + (time.timesplit(song.duration))});
+					//$(time).attr({'title': 'Click to Reset<hr style="padding:0; margin:0;">Length: ' + (time.timesplit(song.duration))});
+					$(time).attr({'title': 'Click to Reset ' + (time.timesplit(song.duration))});
 				}
-				$(time).tooltip('fixTitle');
+				//$(time).tooltip('fixTitle');
 			};
 			$(time).click(function () {
 				song.pause();
 				song.currentTime = 0;
 				time.showtime();
-				$(time).tooltip('fixTitle');
-				$(time).tooltip('show');
+				//$(time).tooltip('fixTitle');
+				//$(time).tooltip('show');
 			});
-			$(time).tooltip('show');
+			//$(time).tooltip('show');
 			$(song).on('loadedmetadata', time.showtime);
 			$(song).on('loadeddata', time.showtime);
 			$(song).on('progress', time.showtime);
@@ -193,20 +195,20 @@
 				time.showtime();
 			}
 			else {
-				$(time).html('<i class="icon-spinner icon-spin"></i>');
+				$(time).html('<i class="fa fa-refresh fa-spin fa-2x"></i>');
 			}
 			$(player).append(time);
 		};
 		var addMute = function() {
 			var mute = document.createElement('button');
-				$(mute).addClass('btn span1');
+				$(mute).addClass('btn btn-default col-xs-12');
 			mute.checkVolume = function () {
 				if (song.volume > 0.5 && !song.muted) {
-					$(mute).html('<i class="icon-volume-up"></i>');
+					$(mute).html('<i class="hidden fa fa-volume-up fa-2x"></i>');
 				} else if (song.volume < 0.5 && song.volume > 0 && !song.muted) {
-					$(mute).html('<i class="icon-volume-down"></i>');
+					$(mute).html('<i class="hidden fa fa-volume-down fa-2x"></i>');
 				} else {
-					$(mute).html('<i class="icon-volume-off"></i>');
+					$(mute).html('<i class="hidden fa fa-volume-off fa-2x"></i>');
 				}
 			};
 			$(mute).click(function () {
@@ -241,7 +243,7 @@
 				$(volume).val(song.volume);
 			};
 			var vol_wrapper = document.createElement('div');
-				$(vol_wrapper).addClass('btn disabled span3');
+				$(vol_wrapper).addClass('hidden btn btn-default disabled col-xs-12');
 			$(vol_wrapper).append(volume);
 			$(volume).on("change", volume.slide);
 			$(song).on('volumechange', volume.set);
@@ -286,10 +288,10 @@
 		};
 		var addAttribution = function() {
 			var attribution = document.createElement('small');
-				$(attribution).addClass('pull-right muted');
+				$(attribution).addClass('center-block clearfix text-center text-muted');
 			if (typeof($(song).data('infoAttLink')) !== 'undefined'){
 				var attribution_link = document.createElement('a');
-					$(attribution_link).addClass('muted');
+					$(attribution_link).addClass('text-muted');
 					$(attribution_link).attr('href', $(song).data('infoAttLink'));
 					$(attribution_link).html($(song).data('infoAtt'));
 				$(attribution).append(attribution_link);
