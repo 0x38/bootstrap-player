@@ -1,38 +1,172 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>bs-layer</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-		<link href="//raw.github.com/WilliamRandol/bootstrap-player/master/css/bootstrap-player.css" rel="stylesheet">
-	</head>
-	<body>
-		<a class="btn btn-primary" href="http://williamrandol.github.com/bootstrap-player/"><i class="icon-github"></i>Home</a>
-		<audio controls
-			data-info-album-art="//farm5.staticflickr.com/4050/4353986539_ec89b52698_d.jpg"
-			data-info-album-title="8874"
-			data-info-artist="Billy Murray"
-			data-info-title="Come, take a trip in my air-ship"
-			data-info-label="Edison Gold Moulded Record"
-			data-info-year="1905"
-			data-info-att="University of California, Santa Barbara Library."
-			data-info-att-link="http://cylinders.library.ucsb.edu/search.php?query=8874">
-			<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.ogg" type="audio/ogg" />
-			<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" />
-			<a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3">cusb_cyl2985d</a>
-		</audio>
-		<audio controls>
-			<source src="http://www.w3schools.com/html/horse.ogg" type="audio/ogg" />
-			<source src="http://www.w3schools.com/html/horse.mp3" type="audio/mpeg" />
-			<a href="http://www.w3schools.com/html/horse.mp3">horse</a>
-		</audio>
-		<footer class="span12">
-			Airship Image From <a href="http://www.flickr.com/photos/mykeamend/4353986539/in/photostream/">Myke Amend</a>.
-		</footer>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js"></script>
-		<script src="//raw.github.com/fryn/html5slider/master/html5slider.js"></script>
-		<script src="//raw.github.com/WilliamRandol/bootstrap-player/master/js/bootstrap-player.js"></script>
-	</body>
+<html lang="en">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="http://meagency.com/hello/">
+    <title>bootstrap-player - A non-intrusive, minimalist HTML5 audio player skin for Bootstrap 3</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<!-- link href="https://raw.githubusercontent.com/duanewilson/bootstrap-player/master/css/bootstrap-player.css" rel="stylesheet" -->
+
+ 	<style>
+ 	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+ 	body {
+ 		font-family: 'Open Sans', Helvetica;
+ 		font-weight: 400;
+ 	}
+ 	h1 {
+ 		font-weight: 700;
+ 	}
+ 
+ .playa input[type=range] {
+    -webkit-appearance:none;
+    -moz-apperance:none;
+    background-color:#fff;
+	border: 1px solid #f5f5f5;
+	height:.5em;
+	border-radius:0;
+    width:100%;
+	margin:-2px;
+	padding:0 !important;
+	line-height:0;
+}
+.playa input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    -moz-apperance:none;
+	z-index:3;
+	height:11px;
+	width:1px;
+	border-radius:0;
+	border:1px solid #111;
+}
+
+.playa {
+	/*margin:0;*/
+}
+
+.playa .btn-default {
+	border:0;
+}
+
+.playa  .thumbnail  {
+	width:96%;
+	padding:1.5%;
+}
+
+.playa  .btn-group  {
+	text-align:center;
+}
+
+.row-audio {
+	margin-top:44px;
+}
+
+
+
+
+@media (max-width: 979px) and (min-width: 768px){
+	.col-sm-4 .playa, .playa.col-sm-4{
+		padding:0;
+	}
+}
+
+@media (min-width: 768px){
+/*
+
+	.playa .btn-group .btn {
+		padding:4px 4px;
+		margin:auto;
+		display:inline-block;
+		float:none;
+	}
+	.playa .btn-group .col-sm-1 {
+		width:8%;
+	}
+	.playa .btn-group .col-sm-2 {
+		width:16%;
+	}
+	.playa .btn-group .col-sm-3 {
+		width:25%;
+	}
+	.playa .btn-group .col-sm-4{
+		width:33%;
+	}
+	.playa.col-sm-2 .btn-group .btn, .playa.col-sm-1 .btn-group .btn, .col-sm-2 .playa .btn-group .btn, .col-sm-1 .playa .btn-group .btn{
+		width:100%;
+		display:block;
+	}
+	.col-sm-4.playa, .col-sm-3 .playa, .col-sm-2 .playa, .col-sm-1 .playa, .playa.col-sm-4, .playa.col-sm-3, .playa.col-sm-2, .playa.col-sm-1{
+		padding:0;
+		overflow:hidden;
+	}
+
+*/
+}
+
+
+ 	.btn {
+ 		border:0;
+ 	}
+ 	.btn:hover {
+ 		background: transparent;
+ 	}
+ 	</style>
+ </head>
+ <body>
+		
+
+<!-- Fixed navbar -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="https://github.com/duanewilson/bootstrap-player"><strong><i class="fa fa-github fa-lg"></i> duanewilson / bootstrap-player</strong></a>
+		</div>
+	</div> <!-- /container-fluid -->
+</div> <!-- /navbar > container -->
+
+<div class="container">
+	<div class="row">
+
+		<h1>Minimalist Player</h1>
+		<p class="lead">Just the bits you want, IMHO</p>
+		<hr>
+		<br>
+				
+		<div id="demo" class="row-audio clearfix center-block text-center">
+			
+			<!-- Start: You need these bits... -->
+			<audio controls>
+				<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.ogg" type="audio/ogg" />
+				<source src="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3" type="audio/mpeg" />
+				<a href="http://www.lost-letters.com/wp-content/uploads/2013/02/cusb-cyl2985d.mp3">Billy Murray: Come, take a trip in my air-ship</a>
+			</audio>
+			<!-- End: You need these bits... -->
+
+		</div>
+
+	</div>
+</div>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="https://raw.githubusercontent.com/fryn/html5slider/gh-pages/html5slider.js"></script>
+	<script src="https://raw.githubusercontent.com/duanewilson/bootstrap-player/master/js/bootstrap-player.js"></script>
+ 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!--[if lt IE 10]>
+    <script src="https://raw.githubusercontent.com/twbs/bootstrap/master/docs/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+ </body>
 </html>

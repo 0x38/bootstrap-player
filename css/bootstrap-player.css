@@ -21,11 +21,16 @@
 }
 
 .playa {
-	/*margin:0;*/
+
 }
 
 .playa .btn-default {
 	border:0;
+}
+
+.playa  .thumbnail  {
+	width:96%;
+	padding:1.5%;
 }
 
 .playa  .btn-group  {
@@ -34,5 +39,18 @@
 
 .row-audio {
 	margin-top:44px;
+}
+
+
+
+
+@media (max-width: 979px) and (min-width: 768px){
+	.col-sm-4 .playa, .playa.col-sm-4{
+		padding:0;
+	}
+}
+
+@media (min-width: 768px){
+
 }
 
