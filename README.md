@@ -5,7 +5,7 @@ A non-intrusive, minimalist HTML5 audio player skin for Bootstrap 3
 
 Demo:
 
-  * http://maxcatmusic.com
+  * https://duanewilson.github.io
 
 Requires:
 
