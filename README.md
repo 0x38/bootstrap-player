@@ -1,11 +1,17 @@
 bootstrap-player
 ================
 
-A Non-Intrusive HTML5 Audio Player Skin For Twitter Bootstrap
+A non-intrusive, minimalist HTML5 audio player skin for Bootstrap 3
+
+Demo:
+
+  * http://maxcatmusic.com
 
 Requires:
 
-  * Twitter Bootstrap - http://twitter.github.com/bootstrap/
+  * Bootstrap (http://getbootstrap.com)
+  * //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css
+  * //maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js
   * jQuery - http://jquery.com/
 
 Firefox Support Requires
@@ -14,4 +20,5 @@ Firefox Support Requires
 
 Additional Features When Using
 
-  * Font Awesome - http://fortawesome.github.com/Font-Awesome/
+  * Font Awesome CDN (//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css)
+
